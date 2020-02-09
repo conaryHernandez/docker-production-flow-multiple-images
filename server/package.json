@@ -8,7 +8,7 @@
     "body-parser": "*"
   },
   "scripts": {
-    "dev": "nodemon",
+    "dev": "nodemon -L",
     "start": "node index.js"
   }
 }
