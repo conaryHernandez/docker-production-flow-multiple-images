@@ -18,3 +18,15 @@ after_success:
   - docker push conaryh/multi-nginx
   - docker push conaryh/multi-server
   - docker push conaryh/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: docker-multi
+  env: DockerMulti-env
+  bucket_name: elasticbeanstalk-us-east-2-552368605510
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
